@@ -1,0 +1,74 @@
+:root{--bg1:#fbf3ee;--bg2:#e7d4c9;--ink:#2a1f1c;--rose:#b27c6b;--deep:#5b3a31}
+body{font-family:Montserrat,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);opacity:.5;z-index:-1;animation:drift 14s ease-in-out infinite alternate}
+.o1{width:340px;height:340px;background:#e9b9a6;top:8%;left:-80px}.o2{width:420px;height:420px;background:#f3d9c8;bottom:5%;right:-120px;animation-delay:-6s}
+@keyframes drift{to{transform:translate(60px,-40px) scale(1.15)}}
+.site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(251,243,238,.78);border-bottom:1px solid rgba(178,124,107,.25)}
+.brand{font:700 1.5rem 'Cormorant Garamond',serif;letter-spacing:.1em;color:var(--deep);background:0;border:0}
+.brand b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,#c99483,var(--deep));color:#fff;font-size:1rem;margin-right:.6rem;box-shadow:0 6px 14px rgba(91,58,49,.35)}
+.nav-btn{background:0;border:0;padding:.5rem .62rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--deep);border-radius:50px;transition:.3s}
+.nav-btn:hover,.nav-btn.active{background:var(--deep);color:#fff;box-shadow:0 8px 18px rgba(91,58,49,.3)}
+main{flex:1;perspective:1600px}
+.view{display:none;padding:2.2rem 0 3rem}.view.active{display:block;animation:var(--a,zoomBlur) .9s cubic-bezier(.2,.8,.2,1) backwards}
+
+.eyebrow{text-align:center;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.title{font:700 clamp(2.2rem,5vw,3.4rem)/1.1 'Cormorant Garamond',serif;text-align:center;margin:.3rem 0 2rem;text-shadow:1px 1px 0 #fff,3px 3px 0 rgba(178,124,107,.35)}
+.card3d{background:rgba(255,255,255,.58);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.8);border-radius:22px;padding:1.6rem;height:auto;box-shadow:inset 0 1px 0 #fff,0 22px 40px -14px rgba(91,58,49,.35),0 50px 80px -40px rgba(91,58,49,.3);transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .2s}
+.card3d h3{font:700 1.5rem 'Cormorant Garamond',serif;color:var(--deep)}
+.card3d .sub{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.card3d ul{padding-left:1.1rem;font-size:.86rem;line-height:1.65;margin:0}.card3d p{font-size:.9rem;line-height:1.75}
+.btn-pill{display:inline-block;border:0;border-radius:50px;padding:.8rem 1.8rem;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;color:#fff;background:linear-gradient(145deg,#8a5a4c,var(--deep));box-shadow:0 14px 24px -8px rgba(91,58,49,.6);transition:.3s}
+.btn-pill:hover{transform:translateY(-3px);color:#fff;box-shadow:0 20px 30px -8px rgba(91,58,49,.6)}
+.btn-pill.light{background:#fff;color:var(--ink)}.btn-pill.light:hover{color:var(--ink)}
+.hero{min-height:80vh;align-items:center}
+.hero h1{font:700 clamp(3rem,8vw,6rem)/.95 'Cormorant Garamond',serif;color:#2a1f1c;text-shadow:0 1px 0 #7b5246,0 2px 0 #7b5246,0 3px 0 #6b4a3e,0 4px 0 #6b4a3e,0 5px 0 #5b3a31,0 6px 0 #5b3a31,0 14px 24px rgba(91,58,49,.45)}
+.role{border-top:1px solid var(--ink);display:inline-block;padding-top:.5rem;margin:1.2rem 0;letter-spacing:.2em;font-size:.9rem}
+.hero-photo{position:relative;text-align:center;transform-style:preserve-3d}
+.hero-photo::before{content:"";position:absolute;inset:6% 8% 0;border-radius:50% 50% 24px 24px;background:linear-gradient(160deg,#fff,#e8c9bb);box-shadow:0 40px 70px -20px rgba(91,58,49,.5)}
+.hero-photo img{position:relative;max-height:80vh;width:auto;max-width:100%;animation:float 6s ease-in-out infinite;filter:drop-shadow(0 25px 25px rgba(91,58,49,.35))}
+@keyframes float{50%{transform:translateY(-14px)}}
+.clip{max-height:var(--h,6.5rem);overflow:hidden;transition:max-height .5s;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+.clip.open{max-height:1400px;-webkit-mask-image:none;mask-image:none}
+.more{background:0;border:0;padding:.4rem 0;margin-top:.4rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rose)}.more:hover{color:var(--deep)}
+.gal{position:relative}
+.track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:1rem .5rem 1.6rem;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 auto;scroll-snap-align:center;margin:0;height:300px;border-radius:18px;overflow:hidden;background:#fff;cursor:zoom-in;box-shadow:0 20px 30px -12px rgba(91,58,49,.4);transition:.35s}
+.slide:hover{transform:translateY(-8px) rotateX(4deg)}.slide img{height:100%;width:auto;display:block}
+.slide.hw{height:240px;padding:1rem;text-align:center;cursor:default;width:190px}.slide.hw img{height:150px;object-fit:contain}.slide.hw figcaption{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--rose);margin-top:.6rem;text-transform:uppercase}
+.arr{position:absolute;top:50%;transform:translateY(-60%);z-index:5;width:46px;height:46px;border:0;border-radius:50%;background:var(--deep);color:#fff;font-size:1.5rem;line-height:1;box-shadow:0 10px 20px rgba(91,58,49,.45);transition:.3s}.arr:hover{background:var(--rose)}.arr.l{left:-8px}.arr.r{right:-8px}
+.nav-pills .nav-link{color:var(--deep);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:50px}.nav-pills .nav-link.active{background:var(--deep)}
+.quote{font:italic 1.35rem/1.6 'Cormorant Garamond',serif;max-width:720px;margin:auto;text-align:center}
+.carousel-control-prev,.carousel-control-next{width:auto}.carousel-control-prev-icon,.carousel-control-next-icon{filter:invert(.3);}
+.photo{border-radius:22px;max-width:100%;box-shadow:0 30px 50px -15px rgba(91,58,49,.5)}
+footer{background:linear-gradient(160deg,#6b4a3e,#2a1f1c);color:#f3e6df;padding:2.2rem 0 1rem;font-size:.85rem}
+footer a{color:#f3e6df;text-decoration:none}footer a:hover{color:#e9b9a6}footer h6{letter-spacing:.2em;font-size:.72rem;color:#e9b9a6}
+@media(max-width:991px){.hero{text-align:center}.arr.l{left:0}.arr.r{right:0}}
+
+.edu-img{width:38%;min-width:110px;max-height:300px;object-fit:cover;object-position:top}
+@media(max-width:575px){.edu-img{width:100%}}
+
+/* ---- section entrance motions (each section is different) ---- */
+#home{--a:zoomBlur}#about{--a:slideL}#experience{--a:fadeSoft}#tools{--a:swingR}#work{--a:curtain}#credentials{--a:flipX}#reviews{--a:blurIn}#services{--a:dropDown}#contact{--a:slideR}
+@keyframes zoomBlur{from{opacity:0;transform:scale(.9);filter:blur(14px)}}
+@keyframes slideL{from{opacity:0;transform:translateX(-110px) skewX(4deg);filter:blur(6px)}}
+@keyframes fadeSoft{from{opacity:0}}
+@keyframes swingR{from{opacity:0;transform:rotateY(32deg) translateX(140px);transform-origin:right center}}
+@keyframes curtain{from{clip-path:inset(0 50% 0 50%);opacity:.3}to{clip-path:inset(0 0 0 0)}}
+@keyframes flipX{from{opacity:0;transform:rotateX(55deg) scale(.9);transform-origin:top center}}
+@keyframes blurIn{from{opacity:0;transform:scale(1.07);filter:blur(18px)}}
+@keyframes dropDown{from{opacity:0;transform:translateY(-70px)}}
+@keyframes slideR{from{opacity:0;transform:translateX(110px) scale(.95)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(50px) rotateX(-12deg)}}
+#experience.active .card3d,#services.active .card3d{animation:cardIn .8s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*120ms + 200ms)}
+.sweep{position:fixed;inset:0;pointer-events:none;z-index:40;opacity:0;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.6) 50%,transparent 62%)}
+.sweep.go{animation:sweep 1s ease}@keyframes sweep{0%{opacity:1;transform:translateX(-100%)}100%{opacity:1;transform:translateX(100%)}}
+/* footer nav */
+.fnav{display:grid;grid-template-columns:repeat(2,auto);gap:.15rem 1.4rem;justify-content:start;font-size:.78rem}
+footer{padding:1.6rem 0 .8rem}
+@media(prefers-reduced-motion:reduce){.view.active,.card3d,.sweep.go{animation:none!important}}
+
+/* navbar: tighter + nudged right (brand stays put) */
+@media(min-width:1200px){.site-header .navbar-nav{margin-right:-.7rem;gap:0!important}}
+/* reviews inside contact */
+.arr.s{position:static;transform:none;width:40px;height:40px;font-size:1.3rem}
+.rev .quote{font-size:1.12rem;line-height:1.55}.rev .card3d h3{font-size:1.3rem}
